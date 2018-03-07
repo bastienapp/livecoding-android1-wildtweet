@@ -20,3 +20,11 @@
 * Afficher/cacher du texte
 * Extraire des chaînes d'un fichier Java
 * [YouTube](https://youtu.be/4ekrcAQ7vro)
+
+### Live Coding Android #02 - Intent et Drawable
+
+* Intent et extra
+* Ajout et chargement d'image : Drawable
+* Ajout d'une ScrollView
+* Ajout d'une image de fond de page
+* [YouTube](https://youtu.be/GHHjbMiZRV8)
