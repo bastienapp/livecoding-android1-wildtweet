@@ -28,3 +28,9 @@
 * Ajout d'une ScrollView
 * Ajout d'une image de fond de page
 * [YouTube](https://youtu.be/GHHjbMiZRV8)
+
+### Live Coding Android #03 - Part 2 - ListView et Adaper
+* Renommer des identifiants, variables et méthodes avec MAJ-F6
+* Créer un Model
+* Afficher une ArrayList de Model avec un Adapter dans une ListView
+* [YouTube](https://youtu.be/670BsaNyLPQ)
