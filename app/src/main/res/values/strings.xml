@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">WildTweet</string>
-    <string name="lastname">Lastname</string>
-    <string name="firstname">Firstname</string>
+    <string name="text_login">Login</string>
+    <string name="text_password">Password</string>
     <string name="accept_cgu">Accept CGU</string>
     <string name="login">Login</string>
-    <string name="enter_your_lastname">Enter your lastname</string>
-    <string name="enter_your_firstname">Enter your firstname</string>
-    <string name="error_empty">Please fill your firstname and lastname</string>
+    <string name="enter_your_login">Enter your login</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="error_empty">Please fill your login and password</string>
     <string name="congratulation">Congratulation %s %s</string>
 </resources>

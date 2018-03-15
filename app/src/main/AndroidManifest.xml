@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListTweetActivity"></activity>
+        <activity android:name=".ListTweetActivity" />
+        <activity android:name=".TacosActivity"></activity>
     </application>
 
 </manifest>
