@@ -34,3 +34,11 @@
 * Créer un Model
 * Afficher une ArrayList de Model avec un Adapter dans une ListView
 * [YouTube](https://youtu.be/670BsaNyLPQ)
+
+### Live Coding Android #04 - Emulator et Héritage
+* Configuration d'un émulateur sur Android
+* Création d'une branche sur Git
+* Création d'une Pull Request sur GitHub
+* Création d'une classe et méthode abstraite, et utilisation de l'héritage
+* Sauvegarde et récupération de données de le cache d'une application avec SharedPereferences
+* [YouTube](https://youtu.be/DHjA5AKCn7M)
