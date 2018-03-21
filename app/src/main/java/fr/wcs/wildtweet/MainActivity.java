@@ -1,6 +1,8 @@
 package fr.wcs.wildtweet;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,20 +24,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final EditText editLogin = findViewById(R.id.edit_login);
+        // initialiser les sharedPreferences
+        final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+
+        // récupérer le username du cache s'il existe
+        String usernameCache = sharedPref.getString("username", "");
+        editLogin.setText(usernameCache);
+
         final Button buttonLogin = findViewById(R.id.button_login);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText editPassword = findViewById(R.id.edit_password);
-                EditText editLogin = findViewById(R.id.edit_login);
                 String passwordValue = editPassword.getText().toString();
                 String loginValue = editLogin.getText().toString();
                 if (loginValue.isEmpty() || passwordValue.isEmpty()) {
                     Toast.makeText(MainActivity.this, R.string.error_empty, Toast.LENGTH_SHORT).show();
                 } else {
+                    // enregistrer dans le cache de l'application
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("username", loginValue);
+                    editor.commit();
+
+                    // TODO : initialiser l'utilisateur
+                    WilderModel wilder = new WilderModel(loginValue, passwordValue);
+
                     Intent goToTweetList = new Intent(MainActivity.this,
                             ListTweetActivity.class);
-                    goToTweetList.putExtra(EXTRA_LOGIN, loginValue);
+                    goToTweetList.putExtra(EXTRA_LOGIN, wilder.getUsername());
                     MainActivity.this.startActivity(goToTweetList);
                 }
             }
