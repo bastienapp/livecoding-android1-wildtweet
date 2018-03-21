@@ -8,26 +8,29 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        >
 
         <TextView
             android:id="@+id/text_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/text_password"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_login" />
 
         <TextView
             android:id="@+id/text_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/text_login"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_password" />
+            app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
         <EditText
             android:id="@+id/edit_password"
@@ -36,7 +39,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:enabled="false"
             android:hint="@string/enter_your_password"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,9 +49,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
-            android:enabled="false"
             android:hint="@string/enter_your_login"
             android:inputType="textCapWords|textUri"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,12 +62,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:enabled="false"
+            android:layout_marginTop="8dp"
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_login" />
+            app:layout_constraintTop_toBottomOf="@+id/check_cgu" />
 
         <CheckBox
             android:id="@+id/check_cgu"
@@ -74,11 +74,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
+            android:checked="true"
             android:text="@string/accept_cgu"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_login" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_password" />
 
         <TextView
             android:id="@+id/text_congratulation"
@@ -95,24 +97,14 @@
 
         <ImageView
             android:id="@+id/image_logo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/wildtweetlogo" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="82dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/like" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
