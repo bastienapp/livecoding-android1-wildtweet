@@ -29,11 +29,17 @@
 * Ajout d'une image de fond de page
 * [YouTube](https://youtu.be/GHHjbMiZRV8)
 
-### Live Coding Android #03 - Part 2 - ListView et Adaper
+### Live Coding Android #03 - Part 1 - ListView et Adaper
 * Renommer des identifiants, variables et méthodes avec MAJ-F6
 * Créer un Model
 * Afficher une ArrayList de Model avec un Adapter dans une ListView
 * [YouTube](https://youtu.be/670BsaNyLPQ)
+
+### Live Coding Android #03 - Part 2 - Git et GitHub
+* Utilisation des principales commandes de Git
+* Merge d'une branche et résolution de conflit
+* Récupération des modifications de master sur une branche avec rebase
+* [YouTube](https://youtu.be/c0lnrdSlros)
 
 ### Live Coding Android #04 - Emulator et Héritage
 * Configuration d'un émulateur sur Android
