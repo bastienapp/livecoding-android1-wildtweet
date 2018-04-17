@@ -8,4 +8,7 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="error_empty">Please fill your login and password</string>
     <string name="congratulation">Congratulation %s %s</string>
+    <string name="username">Username</string>
+    <string name="content">Content</string>
+    <string name="send_tweet">Send Tweet</string>
 </resources>
