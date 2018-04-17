@@ -10,7 +10,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -23,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView ivLogo = findViewById(R.id.image_logo);
+
+        String url = "https://wildcodeschool.fr/wp-content/uploads/2017/01/logo_orange_pastille.png";
+
+        Glide.with(this)
+                .load(url)
+                .into(ivLogo);
 
         final EditText editLogin = findViewById(R.id.edit_login);
         // initialiser les sharedPreferences
