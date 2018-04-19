@@ -11,4 +11,6 @@
     <string name="username">Username</string>
     <string name="content">Content</string>
     <string name="send_tweet">Send Tweet</string>
+    <string name="error_fill_form">Please fill the form</string>
+    <string name="last_tweet">Get last tweet</string>
 </resources>

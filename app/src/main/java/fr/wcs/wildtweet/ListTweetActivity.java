@@ -1,14 +1,20 @@
 package fr.wcs.wildtweet;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ListTweetActivity extends AppCompatActivity {
 
@@ -26,16 +32,30 @@ public class ListTweetActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<TweetModel> tweetList =
-                new ArrayList<>();
-        tweetList.add(new TweetModel("Brandon",
-                "ce live coding est génial !"));
-        tweetList.add(new TweetModel("Kevin",
-                "tacos"));
-        tweetList.add(new TweetModel("Monika",
-                "Git je comprends trop ce que c'est lol"));
+        final ArrayList<TweetModel> tweetList = new ArrayList<>();
 
-        TweetAdapter adapter = new TweetAdapter(this, tweetList);
+
+        final TweetAdapter adapter = new TweetAdapter(this, tweetList);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference tweetsRef = database.getReference("tweets");
+        tweetsRef.orderByChild("datetime").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                tweetList.clear();
+                for (DataSnapshot tweetSnapshot : dataSnapshot.getChildren()) {
+                    TweetModel tweetModel = tweetSnapshot.getValue(TweetModel.class);
+                    tweetList.add(tweetModel);
+                }
+                Collections.reverse(tweetList);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         ListView listTweet = findViewById(R.id.list_tweet);
         listTweet.setAdapter(adapter);
     }
