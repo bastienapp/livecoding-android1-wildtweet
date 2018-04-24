@@ -14,9 +14,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SingletonExample singletonExample = SingletonExample.getInstance();
+        singletonExample.setText("tacos");
 
         ImageView ivLogo = findViewById(R.id.image_logo);
 
